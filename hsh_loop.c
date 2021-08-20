@@ -15,9 +15,9 @@ void hsh_loop(void)
 
 	do {
 		printf("@hsh> ");
-		line = hsh_read_line();
-		args = hsh_parse(line);
-		status = hsh_execute(args);
+		line = read_line();
+		args = parse_line(line);
+		status = execute(args);
 
 		free(line);
 		free(args);
