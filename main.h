@@ -9,8 +9,17 @@
 
 
 void hsh_loop(void);
-char *hsh_read_line(void);
-char **hsh_parse(char *line);
-int hsh_launch(char **args);
+char *read_line(void);
+char **parse_line(char *line);
+int execute(char **args);
+int launch_hsh(char **args);
+
+/*
+  Function Declarations for builtin shell commands:
+*/
+int hsh_num_builtins();
+int cd_hsh(char **args);
+int help_hsh(char **args);
+int exit_hsh(char **args);
 
 #endif /*MAIN_H*/
