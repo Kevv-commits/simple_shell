@@ -47,7 +47,7 @@ variabl = av[1];
 
 	if (variabl)
 {
-for (; ev; ev = ev->next)
+		for (; ev; ev = ev->next)
 	{
 	  envar = ev->value;
 	for (i = 0; i < _strlen(variabl); i++)
@@ -55,11 +55,11 @@ for (; ev; ev = ev->next)
 		if (variabl[i] != envar[i])
 			break;
 	}
-	if (!variabl[i])
+			if (!variabl[i])
 	{
 	      found = 1;
 		break;
-	    }
+}
 	  index_count++;
 	}
 
