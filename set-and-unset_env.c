@@ -55,7 +55,7 @@ variabl = av[1];
 		if (variabl[i] != envar[i])
 			break;
 	}
-		if (!variabl[i])
+	if (!variabl[i])
 	{
 	      found = 1;
 		break;
