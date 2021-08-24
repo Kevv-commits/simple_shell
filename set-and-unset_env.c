@@ -15,19 +15,19 @@ void _setenv(sev_t *sev)
   variabl = av[1];
   value = av[2];
 
-  if (variabl && value)
-    {
-      new = _strcat(variabl, "=", mt);
-      new = _strcat(new, value, mt);
+if (variabl && value)
+{
+	new = _strcat(variabl, "=", mt);
+	new = _strcat(new, value, mt);
 
-      if (!_setenv_helper(sev, variabl, value))
+if (!_setenv_helper(sev, variabl, value))
 	add_node(&(sev->env), NULL, _strdup(new, mt));
-    }
-  else
-    {
-      sev->errmsg = "Usage: setenv VARIABLE VALUE\n";
-      sev->error = 1;
-    }
+}
+else
+{
+	sev->errmsg = "Usage: setenv VARIABLE VALUE\n";
+	sev->error = 1;
+}
 }
 
 /**
@@ -38,14 +38,14 @@ void _setenv(sev_t *sev)
 
 void _unsetenv(sev_t *sev)
 {
-  list_t *ev = sev->env;
-  unsigned int i = 0, index_count = 0, found = 0;
-  char **av = sev->p_input;
-  char *variabl, *envar;
+list_t *ev = sev->env;
+unsigned int i = 0, index_count = 0, found = 0;
+char **av = sev->p_input;
+char *variabl, *envar;
 
-  variabl = av[1];
+variabl = av[1];
 
-  if (variabl)
+if (variabl)
     {
       for (; ev; ev = ev->next)
 	{
