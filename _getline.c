@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  *_getline - takes string as an input from stream
  *@lineptr: buffer which stores the input
@@ -7,7 +6,6 @@
  *@stream: the stream to read from
  *Return: the number of character read
  */
-
 ssize_t _getline(char **lineptr, size_t *n, FILE *stream)
 {
 static ssize_t input;
@@ -45,9 +43,7 @@ static ssize_t input;
 		input++;
 	}
 	buffer[input] = '\0';
-
 	assign_lineptr(lineptr, n, buffer, input);
-
 	ret = input;
 	if (r != 0)
 		input = 0;
