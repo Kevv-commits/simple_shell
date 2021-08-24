@@ -38,7 +38,6 @@ static ssize_t input;
 			input++;
 			break;
 		}
-
 		if (input >= 120)
 			buffer = _realloc(buffer, input, input + 1);
 
