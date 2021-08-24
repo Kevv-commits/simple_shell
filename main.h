@@ -14,7 +14,7 @@ char **parse_line(char *line);
 int execute(char **args);
 int launch_hsh(char **args);
 ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
-int hsh_env(char **args, char __attribute__((__unused__)) **start;
+int hsh_env(char **args, char __attribute__((__unused__)) **start);
 char **_copyenv(void);
 void free_env(void);
 char **_getenv(const char *var);
