@@ -9,7 +9,7 @@
  * Return: EXIT_SUCCESS
  */
 
-int main(int argc, char **argv)
+int main(int __attribute__((__unused__)) argc, char __attribute__((__unused__)) **argv)
 {
 	hsh_loop();
 
