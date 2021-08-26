@@ -25,6 +25,10 @@ exit
 ```
 ## Built-Ins:
 
-```cd``` - change the current directory.
-```help``` - Print help options.
-```exit``` - command to exit the hsh.
+- ```cd``` - change the current directory.
+
+- ```help``` - Print help options.
+
+- ```exit``` - command to exit the hsh.
+
+## Patrick nganga
