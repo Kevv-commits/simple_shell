@@ -1,21 +1,27 @@
 #include "main.h"
 
-char *builtin_str[] = {"cd","help", "exit"};
+/* List of builtin commands, followed by their corresponding functions.*/
+char *builtin_str[] = {
+	"cd",
+	"help",
+	"exit"
+};
 
-int (*builtin_func[]) (char **) = {&lsh_cd, &lsh_help, &lsh_exit};
+int (*builtin_func[]) (char **) = {
+	&cd_hsh,
+	&help_hsh,
+	&exit_hsh
+};
 
-/**
- *
- */
-int hsh_num_builtins()
+int hsh_num_builtins(void)
 {
 	return (sizeof(builtin_str) / sizeof(char *));
 }
 
 /**
- *
- *
- *
+ * cd_hsh- change directory function
+ * @args: List of args.  args[0] is "cd".  args[1] is the directory.
+ * Return: Always returns 1, to continue executing.
  */
 int cd_hsh(char **args)
 {
@@ -25,23 +31,21 @@ int cd_hsh(char **args)
 	} else
 	{
 		if (chdir(args[1]) != 0)
-		{
 			perror("hsh");
-		}
 	}
 	return (1);
 }
 
 /**
- *
- *
- *
+ * help_hsh- Builtin command to print help.
+ * @args: List of args.
+ * Return: Always returns 1, to continue executing.
  */
-int help_hsh(char **args)
+int help_hsh(char __attribute__((__unused__)) **args)
 {
 	int i;
 
-	printf("Olajomeokes & Kevin Ng'ang'a shell\n");
+	printf("Olajomeoke & Kevin Ng'ang'a shell\n");
 	printf("Type program names and arguments, and hit enter.\n");
 	printf("The following are built in:\n");
 
@@ -55,10 +59,11 @@ int help_hsh(char **args)
 }
 
 /**
- *
- *
+ * exit_hsh- function to exit the shell
+ * @args: list of args
+ * Return: Always returns 0.
  */
-int exit_hsh(char **args)
+int exit_hsh(char __attribute__((__unused__)) **args)
 {
 	return (0);
 }
