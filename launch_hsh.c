@@ -1,16 +1,14 @@
 #include "main.h"
 
 /**
- * launch_hsh- takes the list of arguments created,
- * forks the process, and saves the return value.
- *
- * @args: string pointers to args.
- * Return: 1 to the calling function that we should prompt for input again
+ * launch_hsh- Launch a program and wait for it to terminate.
+ * @args: Null terminated list of arguments
+ * Return: 1 to the calling function and should prompt for input again
  */
 
 int launch_hsh(char **args)
 {
-	pid_t pid, wpid;
+	pid_t pid;
 	int status;
 
 	pid = fork();
@@ -29,8 +27,9 @@ int launch_hsh(char **args)
 	} else
 	{
 		/* Parent process */
-		do {
-			wpid = waitpid(pid, &status, WUNTRACED);
+		do
+		{
+			 waitpid(pid, &status, WUNTRACED);
 		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
 	}
 
