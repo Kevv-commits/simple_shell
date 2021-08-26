@@ -3,8 +3,8 @@
 #define TOK_DELIM " \t\r\n\a"
 
 /**
- * parse_line- splits line into a list of arguments
- * @line: string of commands entered
+ * parse_line- splits line into tokens.
+ * @line: string of commands
  * Return: pointer to the first token
  */
 char **parse_line(char *line)
