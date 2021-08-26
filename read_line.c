@@ -5,7 +5,7 @@
  * read_line- reads lines of input from stdin
  *
  * @void: no parameters taken.
- * Return: buffer
+ * Return: line from stdin
  */
 
 char *read_line(void)
@@ -31,7 +31,7 @@ char *read_line(void)
 		{
 			buffer[position] = '\0';
 			return (buffer);
-		} else if
+		} else
 		{
 			buffer[position] = c;
 		}
