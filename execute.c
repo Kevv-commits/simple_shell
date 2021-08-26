@@ -1,12 +1,11 @@
 #include "main.h"
 
 /**
- * execute- check if the command equals each builtin,
- * if it does then run the command.
+ * execute- run shell builtin, or launch program.
  *
- * @args: string pointers to args.
- * Return: If a command doesn’t match a builtin,
- * calls lsh_launch() to launch the process.
+ * @args: Null terminated list of arguments.
+ * Return: 1 if the shell should continue running,
+ * 0 if it should terminate
  */
 
 int execute(char **args)
